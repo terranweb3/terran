@@ -43,15 +43,15 @@ const positions = [
     buttonLink: "https://sui.io.vn",
     bgColor: "#030F1C",
   },
-  {
-    name: "Training Specialist",
-    description:
-      "I mentor 500+ professionals on Web3 and blockchain, develop tailored educational content, and collaborate with major blockchain foundations like Ethereum and Cardano.",
-    image: "VBI_Logo_White.png",
-    button: "VBI Academy",
-    buttonLink: "https://vbiacademy.edu.vn",
-    bgColor: "hsl(244 93% 32%)",
-  },
+  // {
+  //   name: "Training Specialist",
+  //   description:
+  //     "I mentor 1000+ professionals on Web3 and blockchain, develop tailored educational content, and collaborate with major blockchain foundations like Ethereum and Cardano.",
+  //   image: "VBI_Logo_White.png",
+  //   button: "VBI Academy",
+  //   buttonLink: "https://vbiacademy.edu.vn",
+  //   bgColor: "hsl(244 93% 32%)",
+  // },
   {
     name: "Founder",
     description:
@@ -71,10 +71,16 @@ const experiences = [
     period: "Jul 2025 - Present",
   },
   {
+    title: "Founder",
+    company: "Purro",
+    companyLink: "https://purro.xyz",
+    period: "Jan 2025 - Present",
+  },
+  {
     title: "Training Specialist",
     company: "VBI Academy",
     companyLink: "https://vbiacademy.edu.vn",
-    period: "Feb 2024 - Present",
+    period: "Feb 2024 - Aug 2025",
   },
   {
     title: "Blockchain Lead",
@@ -196,7 +202,7 @@ const skills = [
     <NarrativeSection />
 
     <!-- Skills Section -->
-    <div class="py-24 max-w-4xl mx-auto px-4">
+    <!-- <div class="py-24 max-w-4xl mx-auto px-4">
       <h2 class="text-4xl mb-12 text-left text-white/80">Skills</h2>
       <div class="flex flex-wrap gap-3">
         {
@@ -207,7 +213,7 @@ const skills = [
           ))
         }
       </div>
-    </div>
+    </div> -->
 
     <!-- Experience Section -->
     <div class="py-24 max-w-4xl mx-auto px-4">
@@ -235,7 +241,63 @@ const skills = [
     </div>
 
     <!-- Event Section -->
-    <!-- <EventSection /> -->
+    <EventSection />
+
+    <!-- Work With Me Section -->
+    <div class="py-24 max-w-4xl mx-auto px-4">
+      <div
+        class="bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-white/20 rounded-3xl p-12 text-center"
+      >
+        <h2 class="text-4xl font-satoshi-bold mb-4 text-white/90">
+          Would you like to work with Terran Web3?
+        </h2>
+        <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+          I'm always open to collaborating on exciting Web3 projects, speaking
+          at events, or mentoring developers. Let's build something amazing
+          together!
+        </p>
+
+        <div class="flex flex-col items-center gap-4 mb-8">
+          <a
+            href="mailto:thaiphamngoctuong@gmail.com"
+            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full px-6 py-3 transition-all duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span class="font-satoshi-medium">thaiphamngoctuong@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-center gap-3">
+          {
+            socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                class="bg-white hover:bg-white/80 border border-white/20 rounded-full p-3 transition-all duration-300"
+              >
+                <img
+                  src={`/${social.icon}`}
+                  alt={social.icon}
+                  class="w-5 h-5"
+                />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
   </div>
   <Footer />
 </Layout>

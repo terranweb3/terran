@@ -1,5 +1,94 @@
+---
+const events = [
+  {
+    title: "Sui Learning Tour x Gia Dinh University",
+    description:
+      "University training workshop covering blockchain fundamentals, Move language, and career opportunities with 100+ students.",
+    image: "sui-giadinh.jpg",
+    category: "University Tour",
+    attendees: "100",
+    link: "https://luma.com/54zcuiuw",
+  },
+  {
+    title: "Sui Learning Tour x UIT",
+    description:
+      "Blockchain technology workshop at university bringing Sui ecosystem to students and aspiring developers.",
+    image: "sui-uit.jpg",
+    category: "University Tour",
+    attendees: "170+",
+    link: "https://luma.com/9q75xmc3",
+  },
+  {
+    title: "Sui Dolphinder: Study Jam Series",
+    description:
+      "8-week intensive co-learning program (Modules #1-#6) with 350+ total participants building on Sui blockchain.",
+    image: "study-jam.jpeg",
+    category: "Study Jam",
+    attendees: "350+",
+    link: "https://luma.com/zrlvisos",
+  },
+  {
+    title: "SuiHub Uni Discovery Workshop",
+    description:
+      "Mini-hackathon with 2.5M VND prizes, combining SuiHub tour, blockchain introduction, and hands-on building experience.",
+    image: "suihub-discovery.jpeg",
+    category: "Hackathon",
+    attendees: "33",
+    link: "https://luma.com/vcoyq6sx",
+  },
+  {
+    title: "Solidity to Move: Building the Multichain Future",
+    description:
+      "Workshop exploring DeFi multichain architecture, comparing Solidity and Move programming, with 172+ developers attending.",
+    image: "workshop.jpg",
+    category: "Workshop",
+    attendees: "172",
+    link: "https://luma.com/e8fp627x",
+  },
+];
+---
+
 <div class="py-24 max-w-4xl mx-auto px-4">
   <h2 class="text-4xl mb-12 text-left text-white/80">
     Blockchain Industry Engagement
   </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      events.map((event) => (
+        <a
+          href={event.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-black/20 border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all duration-300 cursor-pointer block"
+        >
+          <div class="aspect-video w-full overflow-hidden">
+            <img
+              src={`/${event.image}`}
+              alt={event.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex justify-center items-center gap-2 mb-3">
+              <span class="text-xs font-satoshi-medium text-white/60 bg-white/10 px-3 py-1 rounded-full">
+                {event.category}
+              </span>
+              {event.attendees && (
+                <span class="text-xs font-satoshi-medium text-white/60 bg-white/10 px-3 py-1 rounded-full">
+                  👥 {event.attendees}
+                </span>
+              )}
+            </div>
+            <h3 class="text-xl font-satoshi-bold mb-2 text-white/90 group-hover:text-white transition-colors">
+              {event.title}
+            </h3>
+            <p class="text-white/70 font-satoshi-light text-sm leading-relaxed">
+              {event.description}
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </div>
