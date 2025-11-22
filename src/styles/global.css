@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -3;
-    background-color: #000;
+    background: linear-gradient(135deg, #0A1628 0%, #0F172A 50%, #020617 100%);
 }
 
 .water-glow {
@@ -29,20 +29,20 @@ body {
     z-index: -2;
     pointer-events: none;
     background: radial-gradient(circle at 25% 40%,
-            rgba(0, 180, 255, 0.25) 0%,
-            rgba(0, 150, 255, 0.12) 25%,
+            rgba(37, 99, 235, 0.15) 0%,
+            rgba(29, 78, 216, 0.08) 25%,
             transparent 50%),
         radial-gradient(circle at 75% 60%,
-            rgba(150, 100, 255, 0.2) 0%,
-            rgba(100, 150, 255, 0.1) 20%,
+            rgba(30, 58, 138, 0.18) 0%,
+            rgba(30, 64, 175, 0.09) 20%,
             transparent 45%),
         radial-gradient(circle at 50% 25%,
-            rgba(0, 220, 180, 0.18) 0%,
-            rgba(50, 200, 150, 0.08) 30%,
+            rgba(14, 165, 233, 0.12) 0%,
+            rgba(6, 182, 212, 0.06) 30%,
             transparent 45%),
         radial-gradient(circle at 80% 30%,
-            rgba(255, 150, 200, 0.15) 0%,
-            rgba(200, 100, 150, 0.06) 25%,
+            rgba(59, 130, 246, 0.1) 0%,
+            rgba(37, 99, 235, 0.05) 25%,
             transparent 40%);
     animation: waterGlow 12s ease-in-out infinite;
 }

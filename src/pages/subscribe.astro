@@ -1,0 +1,240 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <div class="container mx-auto pt-[120px] px-4">
+    <div class="max-w-2xl mx-auto py-24">
+      <!-- Header Section -->
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-satoshi-bold mb-4"
+          style="background-image: linear-gradient(135deg, #ffffff 0%, #93c5fd 20%, #dbeafe 40%, #60a5fa 60%, #bfdbfe 80%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+          Subscribe to My Newsletter
+        </h1>
+        <p class="text-lg text-white/70">
+          Get the latest updates on Web3, blockchain technology, and exclusive content delivered to your inbox.
+        </p>
+      </div>
+
+      <!-- Mailchimp Form -->
+      <div id="mc_embed_shell" class="w-full">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+        
+        <div id="mc_embed_signup" class="bg-slate-900/60 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-8 md:p-12">
+          <form action="https://gmail.us6.list-manage.com/subscribe/post?u=3198d4220c1a1d348d5d71100&amp;id=32d818cc99&amp;f_id=003c34e1f0" 
+                method="post" 
+                id="mc-embedded-subscribe-form" 
+                name="mc-embedded-subscribe-form" 
+                class="validate" 
+                target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <h2 class="text-2xl font-satoshi-bold text-white/90 mb-6">Subscribe</h2>
+              
+              <div class="indicates-required mb-6">
+                <span class="asterisk text-red-400">*</span> 
+                <span class="text-white/60">indicates required</span>
+              </div>
+              
+              <div class="mc-field-group mb-6">
+                <label for="mce-EMAIL" class="block text-white/80 mb-2 font-satoshi-medium">
+                  Email Address <span class="asterisk text-red-400">*</span>
+                </label>
+                <input type="email" 
+                       name="EMAIL" 
+                       class="required email w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-blue-500/30 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300" 
+                       id="mce-EMAIL" 
+                       required="" 
+                       value=""
+                       placeholder="your.email@example.com">
+              </div>
+              
+              <div hidden="">
+                <input type="hidden" name="tags" value="1860623">
+              </div>
+              
+              <div id="mce-responses" class="clear foot">
+                <div class="response text-red-400 mb-4" id="mce-error-response" style="display: none;"></div>
+                <div class="response text-green-400 mb-4" id="mce-success-response" style="display: none;"></div>
+              </div>
+              
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                <input type="text" name="b_3198d4220c1a1d348d5d71100_32d818cc99" tabindex="-1" value="">
+              </div>
+              
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" 
+                         name="subscribe" 
+                         id="mc-embedded-subscribe" 
+                         class="button w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-satoshi-bold py-3 px-6 rounded-xl cursor-pointer transition-all duration-300 mb-4" 
+                         value="Subscribe">
+                  
+                  <p class="text-center" style="margin: 0px auto;">
+                    <a href="http://eepurl.com/jsFV9o" 
+                       title="Mailchimp - email marketing made easy and fun"
+                       class="inline-block opacity-50 hover:opacity-70 transition-opacity duration-300">
+                      <span style="display: inline-block; background-color: transparent; border-radius: 4px;">
+                        <img class="refferal_badge" 
+                             src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" 
+                             alt="Intuit Mailchimp" 
+                             style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;">
+                      </span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Additional Info Section -->
+      <div class="mt-12 text-center">
+        <p class="text-white/60">
+          No spam, unsubscribe at any time. Read our 
+          <a href="/" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">privacy policy</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <Footer />
+</Layout>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+  (function($) {
+    window.fnames = new Array(); 
+    window.ftypes = new Array();
+    fnames[0]='EMAIL';ftypes[0]='email';
+    fnames[1]='FNAME';ftypes[1]='text';
+    fnames[2]='LNAME';ftypes[2]='text';
+    fnames[3]='ADDRESS';ftypes[3]='address';
+    fnames[4]='PHONE';ftypes[4]='phone';
+    fnames[5]='BIRTHDAY';ftypes[5]='birthday';
+    fnames[6]='COMPANY';ftypes[6]='text';
+    fnames[7]='MMERGE7';ftypes[7]='text';
+  }(jQuery));
+  
+  var $mcj = jQuery.noConflict(true);
+</script>
+
+<script is:inline>
+  // SMS Phone Multi-Country Functionality
+  if(!window.MC) {
+    window.MC = {};
+  }
+  window.MC.smsPhoneData = {
+    defaultCountryCode: 'VN',
+    programs: [],
+    smsProgramDataCountryNames: []
+  };
+  
+  function getCountryUnicodeFlag(countryCode) {
+     return countryCode.toUpperCase().replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
+  }
+  
+  // HTML sanitization function to prevent XSS
+  function sanitizeHtml(str) {
+    if (typeof str !== 'string') return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;');
+  }
+  
+  // URL sanitization function to prevent javascript: and data: URLs
+  function sanitizeUrl(url) {
+    if (typeof url !== 'string') return '';
+    const trimmedUrl = url.trim().toLowerCase();
+    if (trimmedUrl.startsWith('javascript:') || trimmedUrl.startsWith('data:') || trimmedUrl.startsWith('vbscript:')) {
+      return '#';
+    }
+    return url;
+  }
+  
+  const getBrowserLanguage = () => {
+    if (!window?.navigator?.language?.split('-')[1]) {
+      return window?.navigator?.language?.toUpperCase();
+    }
+    return window?.navigator?.language?.split('-')[1];
+  };
+  
+  function getDefaultCountryProgram(defaultCountryCode, smsProgramData) {
+    if (!smsProgramData || smsProgramData.length === 0) {
+      return null;
+    }
+    const browserLanguage = getBrowserLanguage();
+    if (browserLanguage) {
+      const foundProgram = smsProgramData.find(
+        (program) => program?.countryCode === browserLanguage,
+      );
+      if (foundProgram) {
+        return foundProgram;
+      }
+    }
+    if (defaultCountryCode) {
+      const foundProgram = smsProgramData.find(
+        (program) => program?.countryCode === defaultCountryCode,
+      );
+      if (foundProgram) {
+        return foundProgram;
+      }
+    }
+    return smsProgramData[0];
+  }
+</script>
+
+<style>
+  /* Override Mailchimp default styles */
+  #mc_embed_signup {
+    background: transparent !important;
+    clear: left;
+    font: 14px Helvetica,Arial,sans-serif;
+    width: 100% !important;
+  }
+  
+  #mc_embed_signup h2 {
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  #mc_embed_signup .mc-field-group {
+    padding-bottom: 0;
+    min-height: auto;
+  }
+  
+  #mc_embed_signup .mc-field-group label {
+    font-weight: 500;
+  }
+  
+  #mc_embed_signup input.email {
+    font-family: inherit;
+  }
+  
+  #mc_embed_signup .button {
+    margin: 0;
+  }
+  
+  #mc_embed_signup .clear {
+    clear: both;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    #mc_embed_signup {
+      padding: 2rem 1.5rem !important;
+    }
+  }
+</style>
+

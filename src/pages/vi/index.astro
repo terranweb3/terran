@@ -1,10 +1,14 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Layout from "../layouts/Layout.astro";
-import NarrativeSection from "../components/NarrativeSection.astro";
-import EventSection from "../components/EventSection.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import NarrativeSection from "../../components/NarrativeSection.astro";
+import EventSection from "../../components/EventSection.astro";
 import { ArrowUpRight } from "@lucide/astro";
+import { useTranslations } from '../../lib/i18n';
+
+const lang = 'en';
+const t = useTranslations(lang);
 
 const socials = [
   {
@@ -35,29 +39,18 @@ const socials = [
 
 const positions = [
   {
-    name: "Developer Ambassador",
-    description:
-      "I serve as a developer ambassador for Sui, helping to build the Sui ecosystem and educate developers on how to use Sui.",
+    name: t('position.devAmbassador.title'),
+    description: t('position.devAmbassador.description'),
     image: "Sui_Logo_White.png",
-    button: "SuiHub HCMC",
+    button: t('position.devAmbassador.button'),
     buttonLink: "https://sui.io.vn",
     bgColor: "#030F1C",
   },
-  // {
-  //   name: "Training Specialist",
-  //   description:
-  //     "I mentor 1000+ professionals on Web3 and blockchain, develop tailored educational content, and collaborate with major blockchain foundations like Ethereum and Cardano.",
-  //   image: "VBI_Logo_White.png",
-  //   button: "VBI Academy",
-  //   buttonLink: "https://vbiacademy.edu.vn",
-  //   bgColor: "hsl(244 93% 32%)",
-  // },
   {
-    name: "Founder",
-    description:
-      "I develop a wallet for Hyperliquid and multichain, including Sui.",
+    name: t('position.founder.title'),
+    description: t('position.founder.description'),
     image: "Purro_Logo.png",
-    button: "Purro Wallet",
+    button: t('position.founder.button'),
     buttonLink: "https://purro.xyz",
     bgColor: "#166260",
   },
@@ -89,39 +82,6 @@ const experiences = [
     period: "Sep 2024 - Jul 2025",
   },
 ];
-
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "Node.js",
-  "Python",
-  "Solidity",
-  "Move",
-  "Rust",
-  "Web3",
-  "Blockchain",
-  "Smart Contracts",
-  "DeFi",
-  "NFTs",
-  "Sui",
-  "Ethereum",
-  "Cardano",
-  "UI/UX Design",
-  "Figma",
-  "Tailwind CSS",
-  "Git",
-  "Docker",
-  "AWS",
-  "MongoDB",
-  "PostgreSQL",
-  "GraphQL",
-  "REST APIs",
-  "Testing",
-  "Agile",
-  "+ More",
-];
 ---
 
 <Layout>
@@ -131,12 +91,12 @@ const skills = [
       <img src="/terrannft.png" alt="logo" class="w-24 md:w-30 rounded-full" />
       <p
         class="text-xl md:text-2xl lg:text-3xl font-satoshi-bold mt-4 px-4 max-w-3xl"
-        style="background-image: linear-gradient(135deg, #ffffff 0%, #93c5fd 20%, #dbeafe 40%, #60a5fa 60%, #bfdbfe 80%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;"
+        style="background-image: linear-gradient(135deg, #ffffff 0%, #c7d2fe 20%, #ffffff 40%, #a5b4fc 60%, #e0e7ff 80%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;"
       >
-        Where code meets community, magic happens.
+        {t('hero.tagline')}
       </p>
       <p class="text-sm md:text-base text-white/50 mt-2 px-4">
-        Web3 Developer | Blockchain Educator | Community Builder
+        {t('hero.subtitle')}
       </p>
       <div class="flex flex-wrap items-center justify-center mt-4 z-10 gap-2">
         {
@@ -146,11 +106,7 @@ const skills = [
               target="_blank"
               class="bg-white/80 border border-white/20 rounded-full p-2 hover:bg-white/90 transition-all duration-300 cursor-pointer"
             >
-              <img
-                src={`/${social.icon}`}
-                alt={social.icon}
-                class="w-5 h-5 md:w-6 md:h-6"
-              />
+              <img src={`/${social.icon}`} alt={social.icon} class="w-5 h-5 md:w-6 md:h-6" />
             </a>
           ))
         }
@@ -166,7 +122,7 @@ const skills = [
             style={`z-index: ${index + 1}; --card-index: ${index};`}
             data-card-index={index}
           >
-            <div class="card-content w-full border border-blue-500/20 rounded-2xl md:rounded-4xl py-6 px-5 md:py-[40px] md:px-[30px] flex md:flex-row flex-col-reverse gap-4 md:gap-2 bg-slate-900/50 backdrop-blur-sm">
+            <div class="card-content w-full border border-white/10 rounded-2xl md:rounded-4xl py-6 px-5 md:py-[40px] md:px-[30px] flex md:flex-row flex-col-reverse gap-4 md:gap-2 bg-black backdrop-blur-sm">
               <div class="flex flex-col justify-center gap-6 md:gap-16 md:pr-8 md:w-1/2">
                 <div class="space-y-2 text-left">
                   <h3 class="text-2xl md:text-3xl">{position.name}</h3>
@@ -205,32 +161,14 @@ const skills = [
     <!-- Narrative Section -->
     <NarrativeSection />
 
-    <!-- Skills Section -->
-    <!-- <div class="py-24 max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl mb-12 text-left text-white/80">Skills</h2>
-      <div class="flex flex-wrap gap-3">
-        {
-          skills.map((skill) => (
-            <span class="bg-black/10 border border-white/20 rounded-lg px-4 py-2 text-sm font-satoshi-medium">
-              {skill}
-            </span>
-          ))
-        }
-      </div>
-    </div> -->
-
     <!-- Experience Section -->
     <div class="py-12 md:py-24 max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl mb-8 md:mb-12 text-left text-white/80">
-        Experience
-      </h2>
+      <h2 class="text-3xl md:text-4xl mb-8 md:mb-12 text-left text-white/80">{t('experience.title')}</h2>
       {
         experiences.map((exp) => (
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center py-4 md:py-6 border-b border-white/10 last:border-b-0">
             <div class="flex-1 mb-3 md:mb-0">
-              <h3 class="text-xl md:text-2xl text-white/80 mb-1 md:mb-2 text-left">
-                {exp.title}
-              </h3>
+              <h3 class="text-xl md:text-2xl text-white/80 mb-1 md:mb-2 text-left">{exp.title}</h3>
             </div>
             <div class="text-left md:text-right w-fit flex flex-col md:items-end">
               <a
@@ -241,9 +179,7 @@ const skills = [
                 {exp.company}
                 <ArrowUpRight class="w-4 h-4 md:w-5 md:h-5" />
               </a>
-              <p class="text-sm md:text-base text-white/60 font-satoshi-light">
-                {exp.period}
-              </p>
+              <p class="text-sm md:text-base text-white/60 font-satoshi-light">{exp.period}</p>
             </div>
           </div>
         ))
@@ -256,19 +192,13 @@ const skills = [
     <!-- Work With Me Section -->
     <div class="py-12 md:py-24 max-w-4xl mx-auto px-4">
       <div
-        class="bg-gradient-to-br from-blue-900/20 via-blue-800/15 to-cyan-900/20 border border-blue-500/20 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center"
+        class="bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-white/20 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center"
       >
-        <h2
-          class="text-2xl md:text-3xl lg:text-4xl font-satoshi-bold mb-3 md:mb-4 text-white/90"
-        >
-          Would you like to work with Terran Web3?
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-satoshi-bold mb-3 md:mb-4 text-white/90">
+          {t('workWithMe.title')}
         </h2>
-        <p
-          class="text-base md:text-lg text-white/70 mb-6 md:mb-8 max-w-2xl mx-auto"
-        >
-          I'm always open to collaborating on exciting Web3 projects, speaking
-          at events, or mentoring developers. Let's build something amazing
-          together!
+        <p class="text-base md:text-lg text-white/70 mb-6 md:mb-8 max-w-2xl mx-auto">
+          {t('workWithMe.description')}
         </p>
 
         <div class="flex flex-col items-center gap-3 md:gap-4 mb-6 md:mb-8">
@@ -289,14 +219,12 @@ const skills = [
               <rect width="20" height="16" x="2" y="4" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
             </svg>
-            <span class="font-satoshi-medium text-sm md:text-base truncate"
-              >thaiphamngoctuong@gmail.com</span
-            >
+            <span class="font-satoshi-medium text-sm md:text-base truncate">thaiphamngoctuong@gmail.com</span>
           </a>
-
+          
           <a
-            href="/subscribe"
-            class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full px-4 md:px-6 py-3 transition-all duration-300 font-satoshi-bold w-full max-w-sm md:w-auto"
+            href="/en/subscribe"
+            class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 rounded-full px-4 md:px-6 py-3 transition-all duration-300 font-satoshi-bold w-full max-w-sm md:w-auto"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -308,12 +236,10 @@ const skills = [
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              ></path>
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            <span class="text-sm md:text-base">Subscribe to Newsletter</span>
+            <span class="text-sm md:text-base">{t('workWithMe.subscribe')}</span>
           </a>
         </div>
 
@@ -462,3 +388,4 @@ const skills = [
   // Initialize when DOM is loaded
   document.addEventListener("DOMContentLoaded", initStackingCards);
 </script>
+

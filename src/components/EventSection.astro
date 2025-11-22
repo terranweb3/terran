@@ -60,7 +60,7 @@ const events = [
           href={event.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="group bg-black/20 border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all duration-300 cursor-pointer block"
+          class="group bg-slate-900/40 border border-blue-500/20 rounded-2xl overflow-hidden hover:border-blue-400/40 transition-all duration-300 cursor-pointer block"
         >
           <div class="aspect-video w-full overflow-hidden">
             <img
@@ -71,11 +71,11 @@ const events = [
           </div>
           <div class="p-6">
             <div class="flex justify-center items-center gap-2 mb-3">
-              <span class="text-xs font-satoshi-medium text-white/60 bg-white/10 px-3 py-1 rounded-full">
+              <span class="text-xs font-satoshi-medium text-blue-300/80 bg-blue-500/20 px-3 py-1 rounded-full">
                 {event.category}
               </span>
               {event.attendees && (
-                <span class="text-xs font-satoshi-medium text-white/60 bg-white/10 px-3 py-1 rounded-full">
+                <span class="text-xs font-satoshi-medium text-cyan-300/80 bg-cyan-500/20 px-3 py-1 rounded-full">
                   👥 {event.attendees}
                 </span>
               )}
